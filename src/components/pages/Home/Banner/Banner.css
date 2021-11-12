@@ -1,0 +1,16 @@
+#banner-bg {
+  background-color: #1a2020;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://cdn.pixabay.com/photo/2016/04/01/12/16/car-1300629_960_720.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 95vh;
+}
+
+#banner-bg .text-box {
+  display: flex;
+  height: 95vh;
+  justify-content: center;
+  align-items: center;
+}

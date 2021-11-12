@@ -1,0 +1,10 @@
+#products-area .single-product {
+  width: 100%;
+  height: 750px;
+}
+
+#products-area img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}

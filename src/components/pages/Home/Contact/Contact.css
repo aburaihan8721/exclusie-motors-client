@@ -1,0 +1,12 @@
+#contact-area iframe {
+  width: 100%;
+}
+
+#contact-area .map-b {
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+#contact-area .form-b {
+  padding: 10px;
+}

@@ -1,0 +1,30 @@
+/* ================================
+common css
+==================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+/* font-family: 'Dancing Script', cursive; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #e5e5e5;
+}
+
+.section-margin {
+  margin-top: 36px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,35 @@
+#footer-area {
+  background-color: #1a2020;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("https://cdn.pixabay.com/photo/2019/07/24/23/09/car-4361321_960_720.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#footer-area ul {
+  list-style-type: none;
+}
+
+#footer-area ul a {
+  text-decoration: none;
+  color: white;
+}
+
+#footer-area .faIcon {
+  color: white;
+}
+
+#footer-area .custom-icon-border {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin: 5px auto;
+}
+
+@media (max-width: 767px) {
+  #footer-area .custom-b {
+    border-right: none !important;
+  }
+}

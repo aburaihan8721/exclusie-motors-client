@@ -1,0 +1,132 @@
+[
+  {
+    "id": "201",
+    "brand": "Mercedes-Benz",
+    "model": "Mercedes-Benz 300D Adenauer",
+
+    "des": "Since 1886, Mercedes-Benz has been around and doing wonders with technology and its tremendous output amongst all the other automobile companies. This car brand has always set the bar high for the other automobile companies, by consistently being on the top with its car sales and manufactures. It has always been said and proven to buy this car brand that they have a history of making a successful history. This automobile company has always paved a path with regards to satisfying its customers without compromising its performance and by bringing in various eco-friendly cars.",
+    "price": "10000",
+    "image": "https://cdn.luxatic.com/wp-content/uploads/2020/12/Mercedes-Benz-300D-Adenauer.jpg"
+  },
+
+  {
+    "id": "202",
+    "brand": "Tesla",
+    "model": "Tesla Model 3",
+
+    "des": "Tesla, the revolutionary battery company, is best known for its electric cars. The company is also popularly known for specializing in cutting-edge solar panel innovation and Lithium-ion battery technology.The company first started to get noticed in 2008 after the release of the Tesla Roadster, the world’s first true-electric sports car. The Model S, a sedan followed the Roadster and has since become one of the world’s best-selling plug-in electric cars. The Tesla Model 3, as of 2019, is the world’s most popular plug-in electric vehicle.",
+    "price": "10500",
+
+    "image": "https://www.carmodelslist.com/wp-content/uploads/2020/05/tesla-model-3.jpg"
+  },
+
+  {
+    "id": "203",
+    "brand": "BMW",
+    "model": "BMW i3 94Ah",
+
+    "des": "With Franz Joseph Popp as its founding father, BMW has always set its marks as the most reliable car brand in the whole automobile industry. With a wide range of innovative vehicle model, this car brand has always been known for its reliability and luxury status. This automobile company has always served its customers with luxurious piloting on the roads, while making sure that comfort has been served, from its passenger vehicles to its SUV, it would always be a great ride.",
+
+    "price": "12300",
+    "image": "https://img.car.com/2018/bmw/i3/47332_101_2_1024x.png"
+  },
+
+  {
+    "id": "204",
+    "brand": "Rolls Royce",
+    "model": "Rolls Royce Dawn",
+
+    "des": "When we talk about luxury with exquisite grace, Rolls Royce would always come to our mind, it has always been the major celebrity choice to buy from this automobile company and experiencing the taste of elite travelling. While the other brands are focused on just technology, this card brand focuses on innovative measures to mix both traditional and technological aspects to keep the model simple yet classy. This brand caters to provide utmost comfort to its driver and its traveller.",
+
+    "price": "11690",
+    "image": "https://cdn.pixabay.com/photo/2016/04/13/20/36/mercedes-1327610_960_720.jpg"
+  },
+
+  {
+    "id": "205",
+    "brand": "Bentley",
+    "model": "Bentley Arnage T",
+
+    "des": "With offering a lavish blend of classic British charm with the modern technology, Bentley as a car brand has its compelling features with high-end speed and muscular power, while providing a lush look to the outer and inner structure of all the vehicles this car brand has manufactured till date. Bentley offers a wide range of vehicles and now have launched its very own SUV ‘Bentley Bentayga’ coming in 2021, with its wide features focusing on the speed, power, technology and not to forget luxury.",
+
+    "price": "10106",
+    "image": "https://www.carmodelslist.com/wp-content/uploads/2015/05/Bentley-Arnage-T.jpg"
+  },
+
+  {
+    "id": "206",
+    "brand": "Bugatti",
+    "model": "Bugatti EB 110",
+
+    "des": "With the establishment of Chiron, Bugatti has marked its way of being under the top car brands in and around the globe with elite status. This automobile company has made the most exclusive and the most innovative sports car which was ever introduced in the techno-waved world. With a speed wide tested and loved by its passengers, this car has been equipped with well-established safety kits.",
+    "price": "13060",
+
+    "image": "https://www.carmodelslist.com/wp-content/uploads/2012/04/Bugatti-EB110.jpg"
+  },
+
+  {
+    "id": "207",
+    "brand": "Porsche",
+    "model": "Porsche Cayenne",
+
+    "des": "Being the world’s largest race car manufacturer, Porsche has been in the car brand league since 1931. This Germany based automobile company, they have made vehicles which would give a set class experience of an SUV with also giving the touch experience of being a sports car. With the up-to-date overall design of the car model, this brand had embarked with the rough yet smooth race track driving experience.",
+    "price": "20150",
+
+    "image": "https://www.carmodelslist.com/wp-content/uploads/2012/04/Porsche-Cayenne-car-model-1.jpg"
+  },
+
+  {
+    "id": "208",
+    "brand": "Lexus",
+    "model": "Lexus GS",
+
+    "des": "Lexus is one of those car brands which has received the most awards amongst all the automobile companies. Lexus has always been a prominent car brand which has fairly served its purpose with good quality, speed and comfort. This car brand is successfully known for its high resale value. Many customers have claimed that Lexus makes eco-friendly vehicles which are long-lasting and reliable. The vehicles manufactured are fuel-efficient making it even more reliable for its buyers.",
+    "price": "20465",
+
+    "image": "https://www.carmodelslist.com/wp-content/uploads/2014/12/Lexus-GS-Car-Model.jpg"
+  },
+
+  {
+    "id": "209",
+    "brand": "Land Rover",
+    "model": "Range Rover Sport",
+
+    "des": "Land Rover, which is Britain’s very own icon, is not a part of Jaguar Land Rover which is owned by Tata Motors of India. While being a premium brand, it also an SUV specialized model. Wherever you would go for off-roading, you will definitely have thought of a Land Rover, no doubt that this car brand is a must-have for the off-roaders. It notably has tremendous passenger space while providing a safe journey to its passengers. This car brand is mostly favoured for adventurous journeys.",
+    "price": "18036",
+
+    "image": "https://www.carmodelslist.com/wp-content/uploads/2015/07/Range-Rover.jpg"
+  },
+
+  {
+    "id": "210",
+    "brand": "Toyota",
+    "model": "Toyota Camry",
+
+    "des": "Toyota was ranked the highest in the Kelly Blue Books rate of resale value, over the last few decades, this car brand has worked hard in providing its customers with utmost perfection and comfort. Safety for the passengers has always been of utmost importance for this automobile company and was awarded for the same. It was also awarded by the same Kelly Blue Book’s top green vehicles, as it also focused on the innovative technology keeping in mind of the environment.",
+    "price": "12350",
+
+    "image": "https://www.carmodelslist.com/wp-content/uploads/2012/04/Toyota-Camry-car-model.jpg"
+  },
+
+  {
+    "id": "211",
+    "brand": "Audi",
+    "model": "Audi A7 Sportback",
+
+    "des": "According to the consumer reports Audi makes the best cars while being the most prominent car brand for designing the best car interiors, with easy and accessible controls. This automobile company has always been innovative with its technological advancements proving with its MMI infotainment system to be among the best available amongst the other brands. This car brand has the biggest vehicle line ups from being super-mini to being supra huge with the best available diesel and hybrid engines making.",
+    "price": "12569",
+
+    "image": "https://www.carmodelslist.com/wp-content/uploads/2012/04/Audi-A7-Sportback.jpg"
+  },
+
+  {
+    "id": "212",
+    "brand": "Jaguar",
+    "model": "Jaguar XJ",
+
+    "des": "Owned by Tata group of companies, this car brand has its very own variability and a level of classiness that cannot be compared with other automobile companies. While taking care of the safety measures of the passengers with taking due care of providing a technology well researched and tested, this car brand has shined its way out in and around the globe with a high level of resale values. Some of the best models being Jaguar XJL, Jaguar XE and so many more.",
+    "price": "11550",
+
+    "image": "https://www.carmodelslist.com/wp-content/uploads/2013/08/Jaguar-XJ-car-model.jpg"
+  }
+]
