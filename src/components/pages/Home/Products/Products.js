@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 import "./Products.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
 
   const limitProducts = products?.slice(0, 6);
-  //   console.log(limitProducts);
+  // console.log(limitProducts[0]);
 
   useEffect(() => {
-    fetch(`/products.json`)
+    fetch(`http://localhost:5000/cars`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -45,9 +45,9 @@ const Products = () => {
                 <h6> Model : {product.model}</h6>
                 <h3>Price : ${product.price}</h3>
                 <p>{product.des}</p>
-                <Link to="/purchase">
+                <NavLink to={`/purchase/${product._id}`}>
                   <button className="btn btn-outline-secondary text-capitalize">buy now</button>
-                </Link>
+                </NavLink>
               </div>
             </div>
           ))}

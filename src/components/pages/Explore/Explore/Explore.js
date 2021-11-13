@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Footer from "../../../shared/Footer/Footer";
 import MenuBar from "../../../shared/MenuBar/MenuBar";
 import "./Explore.css";
@@ -7,8 +7,9 @@ import "./Explore.css";
 const Explore = () => {
   const [allProducts, setAllProducts] = useState([]);
 
+
   useEffect(() => {
-    fetch(`/products.json`)
+    fetch(`http://localhost:5000/cars`)
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   }, []);
@@ -46,9 +47,9 @@ const Explore = () => {
                   <h6> Model : {product.model}</h6>
                   <h3>Price : ${product.price}</h3>
                   <p>{product.des}</p>
-                  <Link to="purchase">
-                    <button className="btn btn-outline-secondary text-capitalize">buy now</button>
-                  </Link>
+                  <NavLink to={`/purchase/${product._id}`}>
+                  <button className="btn btn-outline-secondary text-capitalize">buy now</button>
+                </NavLink>
                 </div>
               </div>
             ))}

@@ -1,5 +1,5 @@
 import React from "react";
-import {NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import "./MenuBar.css";
 
@@ -31,11 +31,20 @@ const MenuBar = () => {
                   Home
                 </NavLink>
               </li>
+
               <li className="nav-item">
                 <NavLink className="nav-link" to="/explore">
                   More Cars
                 </NavLink>
               </li>
+
+              {user?.email && (
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/addReview">
+                    Add Review
+                  </NavLink>
+                </li>
+              )}
 
               {user?.email ? (
                 <li className="mx-1">
@@ -51,7 +60,7 @@ const MenuBar = () => {
                 </li>
               )}
             </ul>
-            <span className="navbar-text text-white me-1">user name</span>
+            {user?.email && <span className="navbar-text text-white me-1">{user?.displayName}</span>}
           </div>
         </div>
       </nav>

@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { NavLink, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
+import googleImg from "../../../../images/google1.png";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
-  const { user, loginUser, isLoading, authError } = useAuth();
+  const { user, loginUser, isLoading, authError, signInWithGoogle } = useAuth();
 
   const history = useHistory();
   const location = useLocation();
 
-  const handleOnChange = (e) => {
+  // onblur for handling input value
+  const handleOnBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
     const newLoginData = { ...loginData };
@@ -17,9 +19,13 @@ const Login = () => {
     setLoginData(newLoginData);
   };
 
+  // handle google sign in
+  const handleGoogleSignIn = () => {
+    signInWithGoogle(location, history);
+  };
+
   const handleLoginForm = (e) => {
     loginUser(loginData.email, loginData.password, location, history);
-
     e.preventDefault();
   };
 
@@ -38,7 +44,7 @@ const Login = () => {
                       className="form-control mb-4"
                       type="email"
                       placeholder="Type Your Email"
-                      onChange={handleOnChange}
+                      onBlur={handleOnBlur}
                       name="email"
                     />
                   </div>
@@ -48,7 +54,7 @@ const Login = () => {
                       className="form-control mb-4"
                       type="password"
                       placeholder="Type Your password"
-                      onChange={handleOnChange}
+                      onBlur={handleOnBlur}
                       name="password"
                     />
                   </div>
@@ -93,6 +99,20 @@ const Login = () => {
               <p className="text-capitalize text-center">
                 are you new user? please <NavLink to="/register">register</NavLink>
               </p>
+
+              <p className="text-center fw-bold">
+                ------------------------ <span className="text-info">OR</span> ------------------------
+              </p>
+              <div className="text-center">
+                <span>
+                  <button onClick={handleGoogleSignIn} className="btn btn-outline-info text-capitalize fw-bold">
+                    <span className="px-1">
+                      <img src={googleImg} alt="google" style={{ height: "25px", width: "25px" }} />
+                    </span>
+                    <span className="px-1">continue with google</span>
+                  </button>
+                </span>
+              </div>
             </div>
           </div>
         </div>

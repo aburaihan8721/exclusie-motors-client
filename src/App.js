@@ -9,6 +9,8 @@ import NotFound from "./components/pages/NotFound/NotFound";
 import Purchase from "./components/pages/Purchase/Purchase/Purchase";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PrivateRoute from "./components/pages/Login/Private/PrivateRoute";
+import AddProduct from "./components/pages/AddProduct/AddProduct";
+import AddReview from "./components/pages/AddReview/AddReview";
 
 function App() {
   return (
@@ -34,9 +36,18 @@ function App() {
             <Route path="/dashboard">
               <DashBoard />
             </Route>
-            <PrivateRoute path="/purchase">
+            <PrivateRoute path="/purchase/:id">
               <Purchase />
             </PrivateRoute>
+
+            <Route path="/addReview">
+              <AddReview />
+            </Route>
+
+            <Route path="/addProduct">
+              <AddProduct />
+            </Route>
+
             <Route path="*">
               <NotFound />
             </Route>
