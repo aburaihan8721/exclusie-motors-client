@@ -5,7 +5,7 @@ import googleImg from "../../../../images/google1.png";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
-  const { user, loginUser, isLoading, authError, signInWithGoogle } = useAuth();
+  const { loginUser, isLoading, authError, signInWithGoogle } = useAuth();
 
   const history = useHistory();
   const location = useLocation();
@@ -84,11 +84,11 @@ const Login = () => {
                 </div>
               )}
 
-              {user?.email && (
+              {/* {user?.email && (
                 <div className="alert alert-success" role="alert">
                   logged in Successfully
                 </div>
-              )}
+              )} */}
 
               {authError && (
                 <div className="alert alert-danger" role="alert">

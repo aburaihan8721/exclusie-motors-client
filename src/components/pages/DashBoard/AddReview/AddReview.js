@@ -1,10 +1,10 @@
 import "./AddReview.css";
 import { useForm } from "react-hook-form";
-import useAuth from "../../../hooks/useAuth";
+import useAuth from "../../../../hooks/useAuth";
 import axios from "axios";
 
 const AddReview = () => {
-  const { user } = useAuth();
+  const { user, success, setSuccess } = useAuth();
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       name: `${user?.displayName}`,
@@ -17,9 +17,7 @@ const AddReview = () => {
     axios.post("http://localhost:5000/reviews", data).then((res) => {
       console.log(res);
       if (res.data.acknowledged) {
-        <div className="alert alert-success" role="alert">
-          Car Added Successfully!
-        </div>;
+        setSuccess(true);
         reset();
       }
     });
@@ -44,12 +42,18 @@ const AddReview = () => {
                 />
                 <input className="form-control mb-3" {...register("email")} defaultValue={user?.email} disabled />
                 <input className="form-control mb-3" {...register("review")} placeholder="Your Comment " />
-                <input className="form-control mb-3" {...register("star")} placeholder="Rating (3-4)" />
+                <input className="form-control mb-3" {...register("star")} placeholder="Rating (0-5)" />
                 <input className="form-control mb-3" {...register("image")} placeholder="Add Your Photo" />
                 <button className="form-control mb-3 btn btn-outline-info text-uppercase fw-bold" type="submit">
                   Submit
                 </button>
               </form>
+
+              {success && (
+                <div className="alert alert-success" role="alert">
+                  Car Added Successfully!
+                </div>
+              )}
             </div>
           </div>
         </div>

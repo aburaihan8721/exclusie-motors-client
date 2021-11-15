@@ -19,6 +19,8 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [authError, setAuthError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [success, setSuccess] = useState(false);
+  const [admin, setAdmin] = useState(false);
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -99,6 +101,13 @@ const useFirebase = () => {
     return () => unsubscribed;
   }, [auth]);
 
+  // load admin data
+  useEffect(() => {
+    fetch(`http://localhost:5000/bookings/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
+
   // log out method
   const logout = () => {
     setIsLoading(true);
@@ -120,6 +129,9 @@ const useFirebase = () => {
     isLoading,
     logout,
     signInWithGoogle,
+    setSuccess,
+    success,
+    admin,
   };
 };
 

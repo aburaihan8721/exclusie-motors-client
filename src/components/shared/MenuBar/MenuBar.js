@@ -38,20 +38,40 @@ const MenuBar = () => {
                 </NavLink>
               </li>
 
-              {user?.email && (
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/addReview">
-                    Add Review
-                  </NavLink>
-                </li>
-              )}
+              {/* <>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/pay">
+                      Pay
+                    </NavLink>
+                  </li>
+
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/myOrders">
+                      My Orders
+                    </NavLink>
+                  </li>
+
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/addReview">
+                      Add Review
+                    </NavLink>
+                  </li>
+                </> */}
 
               {user?.email ? (
-                <li className="mx-1">
-                  <button onClick={logout} className="btn btn-outline-info text-capitalize">
-                    logout
-                  </button>
-                </li>
+                <>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/dashboard">
+                      Dashboard
+                    </NavLink>
+                  </li>
+
+                  <li className="mx-1">
+                    <button onClick={logout} className="btn btn-outline-info text-capitalize">
+                      logout
+                    </button>
+                  </li>
+                </>
               ) : (
                 <li className="mx-1">
                   <NavLink className="" to="/login">

@@ -7,7 +7,6 @@ import "./Explore.css";
 const Explore = () => {
   const [allProducts, setAllProducts] = useState([]);
 
-
   useEffect(() => {
     fetch(`http://localhost:5000/cars`)
       .then((res) => res.json())
@@ -48,8 +47,8 @@ const Explore = () => {
                   <h3>Price : ${product.price}</h3>
                   <p>{product.des}</p>
                   <NavLink to={`/purchase/${product._id}`}>
-                  <button className="btn btn-outline-secondary text-capitalize">buy now</button>
-                </NavLink>
+                    <button className="btn btn-outline-secondary text-capitalize">buy now</button>
+                  </NavLink>
                 </div>
               </div>
             ))}

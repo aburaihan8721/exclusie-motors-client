@@ -1,15 +1,62 @@
 import React, { useEffect, useState } from "react";
 import "./Purchase.css";
-import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
-import axios from "axios";
 
 const Purchase = () => {
-  const [car, setCar] = useState();
+  const [car, setCar] = useState({});
+
   const { id } = useParams();
-  const { user } = useAuth();
-  // console.log(car);
+  const { user, success, setSuccess } = useAuth();
+  const initialInfo = {
+    image: car.image,
+    brand: car.brand,
+    model: car.model,
+    name: user.displayName,
+    email: user.email,
+    mobile: "",
+    address: "",
+  };
+  const [bookingData, setBookingData] = useState(initialInfo);
+
+  // handle on blur
+  const handleOnBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newBookingData = { ...bookingData };
+    newBookingData[field] = value;
+    setBookingData(newBookingData);
+  };
+
+  const handleBookingForm = (e) => {
+    e.preventDefault();
+
+    const booking = {
+      ...bookingData,
+      image: car.image,
+      brand: car.brand,
+      model: car.model,
+      name: user.displayName,
+      email: user.email,
+    };
+
+    console.log(booking);
+    // post booking info to server
+    fetch("http://localhost:5000/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          setSuccess(true);
+          e.target.reset();
+        }
+      });
+  };
 
   // data load
   useEffect(() => {
@@ -17,28 +64,6 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => setCar(data));
   }, [id]);
-
-  // handle address data
-  const { register, handleSubmit, reset } = useForm({
-    defaultValues: {
-      email: `${user?.email}`,
-      name: `${user?.displayName}`,
-    },
-  });
-
-  const onSubmit = (data) => {
-    console.log(data);
-    // post address info to server
-    axios.post("http://localhost:5000/address", data).then((res) => {
-      console.log(res);
-      if (res.data.acknowledged) {
-        <div className="alert alert-success" role="alert">
-          Address Added Successfully!
-        </div>;
-        reset();
-      }
-    });
-  };
 
   return (
     <div className="py-4">
@@ -74,27 +99,96 @@ const Purchase = () => {
           {/* address info */}
           <div className="col-md-5">
             <div className="w-75 mx-auto p-3">
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form onSubmit={handleBookingForm}>
                 <h2 className="text-center py-3 fw-bold">
                   Your <span className="text-info">Address</span>
                 </h2>
 
-                <input className="form-control mb-3" {...register("name")} placeholder="Name" disabled />
-                <input className="form-control mb-3" {...register("email")} placeholder="Email" disabled />
-                <input
-                  className="form-control mb-3"
-                  {...register("mobile", { required: true })}
-                  placeholder="Mobile"
-                />
+                <div>
+                  <input
+                    className="form-control mb-4"
+                    type="text"
+                    name="image"
+                    defaultValue={car.image}
+                    disabled
+                  />
+                </div>
 
-                <textarea
-                  className="form-control mb-3"
-                  {...register("fullAddress", { required: true })}
-                  placeholder="Full Address"
-                />
-                <button className="form-control mb-3 btn btn-outline-info text-uppercase fw-bold" type="submit">
-                  Place Order
-                </button>
+                <div>
+                  <input
+                    className="form-control mb-4"
+                    type="text"
+                    name="brand"
+                    defaultValue={car.brand}
+                    disabled
+
+                  />
+                </div>
+
+                <div>
+                  <input
+                    className="form-control mb-4"
+                    type="text"
+                    name="model"
+                    defaultValue={car.model}
+                    disabled
+
+                  />
+                </div>
+
+                <div>
+                  <input
+                    className="form-control mb-4"
+                    type="text"
+                    onBlur={handleOnBlur}
+                    name="name"
+                    defaultValue={user.displayName}
+                  />
+                </div>
+
+                <div>
+                  <input
+                    className="form-control mb-4"
+                    type="email"
+                    onBlur={handleOnBlur}
+                    name="email"
+                    defaultValue={user.email}
+                  />
+                </div>
+
+                <div>
+                  <input
+                    className="form-control mb-4"
+                    type="number"
+                    placeholder="Mobile"
+                    onBlur={handleOnBlur}
+                    name="mobile"
+                  />
+                </div>
+                
+                <div>
+                  <textarea
+                    className="form-control mb-4"
+                    type="text"
+                    placeholder="Your Full Address"
+                    onBlur={handleOnBlur}
+                    name="address"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    className="form-control mb-4 bg-secondary text-uppercase fw-bold"
+                    type="submit"
+                    value="Place Order"
+                  />
+                </div>
+
+                {success && (
+                  <div className="alert alert-success" role="alert">
+                    Order Successful!
+                  </div>
+                )}
               </form>
             </div>
           </div>

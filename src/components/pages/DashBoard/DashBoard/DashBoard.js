@@ -1,36 +1,107 @@
 import React from "react";
 import "./DashBoard.css";
+import { Switch, Route, NavLink, useRouteMatch } from "react-router-dom";
+import MyOrders from "../MyOrders/MyOrders";
+import MakeAdmin from "./MakeAdmin/MakeAdmin";
+import Pay from "../Pay/Pay";
+import AddReview from "../AddReview/AddReview";
+import ManageProducts from "../ManageProducts/ManageProducts";
+import AddProduct from "../AddProduct/AddProduct";
+import AllOrders from "./AllOrders/AllOrders";
+import useAuth from "../../../../hooks/useAuth";
 
 const DashBoard = () => {
+  let { path, url } = useRouteMatch();
+  const { logout, admin } = useAuth();
+
   return (
-    <div className="dashboard-area">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-2 bg-info c-bg">
-            <nav class="nav flex-column">
-              <a class="nav-link active" aria-current="page" href="/">
-                Active
-              </a>
-              <a class="nav-link" href="/">
-                Link
-              </a>
-              <a class="nav-link" href="/">
-                Link
-              </a>
-              <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">
-                Disabled
-              </a>
-            </nav>
+    <div className=" my-2" id="dashboard-area">
+      <div className="container">
+        <div className="row border border-dark">
+          {/*=========== dashboard sidebar start==============*/}
+          <div className="col-md-3 vh-100 c-bg">
+            <div className="ps-3">
+              <nav className="nav flex-column py-5 ">
+                {!admin && (
+                  <>
+                    <NavLink className="nav-link text-white" to={`${url}`}>
+                      My Orders
+                    </NavLink>
+
+                    <NavLink className="nav-link text-white" to={`${url}/addReview`}>
+                      Add Review
+                    </NavLink>
+
+                    <NavLink className="nav-link text-white" to={`${url}/pay`}>
+                      Pay
+                    </NavLink>
+                  </>
+                )}
+                {/*===========link only for admin========== */}
+
+                {admin && (
+                  <>
+                    <NavLink className="nav-link text-white" to={`${url}/manageProducts`}>
+                      Manage Products
+                    </NavLink>
+
+                    <NavLink className="nav-link text-white" to={`${url}/allOrders`}>
+                      All Orders
+                    </NavLink>
+
+                    <NavLink className="nav-link text-white" to={`${url}/addProduct`}>
+                      Add Product
+                    </NavLink>
+
+                    <NavLink className="nav-link text-white" to={`${url}/makeAdmin`}>
+                      Make Admin
+                    </NavLink>
+                  </>
+                )}
+              </nav>
+              <div className=" c-margin">
+                <button onClick={logout} type="button" className="btn btn-danger btn-sm text-white">
+                  Log Out
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="col-md-9">
-            <h2>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, repellendus dolore excepturi nam
-              nemo velit soluta commodi expedita saepe dolor? Aspernatur aperiam obcaecati, quod accusamus neque
-              consectetur harum laudantium optio ducimus architecto tempore earum ullam, consequatur officiis
-              exercitationem rerum ex totam iste at mollitia nobis deleniti sapiente. Ab sequi quaerat doloremque
-              porro, cum commodi rem tempora, deleniti natus, dicta omnis est aperiam consequuntur temporibus?
-            </h2>
+          {/*=========== dashboard sidebar end==============*/}
+
+          {/* dashboard content */}
+          <div className="col-md-9 vh-100 overflow-auto">
+            <div className="">
+              <h6 className="fw-bold p-3 sticky-top">Dashboard</h6>
+              <Switch>
+                <Route exact path={path}>
+                  <MyOrders></MyOrders>
+                </Route>
+                <Route path={`${path}/pay`}>
+                  <Pay></Pay>
+                </Route>
+                <Route path={`${path}/addReview`}>
+                  <AddReview></AddReview>
+                </Route>
+
+                {/*===========options only for admin========== */}
+                <Route path={`${path}/manageProducts`}>
+                  <ManageProducts></ManageProducts>
+                </Route>
+
+                <Route path={`${path}/allOrders`}>
+                  <AllOrders></AllOrders>
+                </Route>
+
+                <Route path={`${path}/addProduct`}>
+                  <AddProduct></AddProduct>
+                </Route>
+
+                <Route path={`${path}/makeAdmin`}>
+                  <MakeAdmin></MakeAdmin>
+                </Route>
+              </Switch>
+            </div>
           </div>
         </div>
       </div>
@@ -39,3 +110,5 @@ const DashBoard = () => {
 };
 
 export default DashBoard;
+
+// ================end===============

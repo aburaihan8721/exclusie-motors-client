@@ -41,6 +41,18 @@ const Review = () => {
                   </div>
                   <p>{review.review}</p>
                   <h6>Rating : {review.star}</h6>
+
+                  {review.star == 1 && (
+                    <span className="text-warning">
+                      <FontAwesomeIcon icon={faStar} className="faIcon" />
+                    </span>
+                  )}
+                  {review.star == 2 && (
+                    <span className="text-warning">
+                      <FontAwesomeIcon icon={faStar} className="faIcon" />
+                      <FontAwesomeIcon icon={faStar} className="faIcon" />
+                    </span>
+                  )}
                   {review.star == 3 && (
                     <span className="text-warning">
                       <FontAwesomeIcon icon={faStar} className="faIcon" />
@@ -48,6 +60,7 @@ const Review = () => {
                       <FontAwesomeIcon icon={faStar} className="faIcon" />
                     </span>
                   )}
+
                   {review.star == 4 && (
                     <span className="text-warning">
                       <FontAwesomeIcon icon={faStar} className="faIcon" />
@@ -56,6 +69,17 @@ const Review = () => {
                       <FontAwesomeIcon icon={faStar} className="faIcon" />
                     </span>
                   )}
+
+                  {review.star == 5 && (
+                    <span className="text-warning">
+                      <FontAwesomeIcon icon={faStar} className="faIcon" />
+                      <FontAwesomeIcon icon={faStar} className="faIcon" />
+                      <FontAwesomeIcon icon={faStar} className="faIcon" />
+                      <FontAwesomeIcon icon={faStar} className="faIcon" />
+                      <FontAwesomeIcon icon={faStar} className="faIcon" />
+                    </span>
+                  )}
+
                   <h6 className="font-style">{review.name}</h6>
                 </div>
               </div>
