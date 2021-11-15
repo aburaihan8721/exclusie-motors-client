@@ -28,6 +28,19 @@
   margin: 5px auto;
 }
 
+#footer-area .link-din {
+  background-color: #0478b2;
+}
+#footer-area .facebook {
+  background-color: #254498;
+}
+#footer-area .twitter {
+  background-color: #03a3e1;
+}
+#footer-area .instagram {
+  background-color: #4173ba;
+}
+
 @media (max-width: 767px) {
   #footer-area .custom-b {
     border-right: none !important;

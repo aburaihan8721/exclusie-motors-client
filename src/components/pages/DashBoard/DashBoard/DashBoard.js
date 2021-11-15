@@ -22,6 +22,10 @@ const DashBoard = () => {
           <div className="col-md-3 vh-100 c-bg">
             <div className="ps-3">
               <nav className="nav flex-column py-5 ">
+                <NavLink className="nav-link text-white" to="/">
+                  Home
+                </NavLink>
+
                 {!admin && (
                   <>
                     <NavLink className="nav-link text-white" to={`${url}`}>

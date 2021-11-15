@@ -21,7 +21,7 @@ const Footer = () => {
                   <Link to="/home">Home</Link>
                 </li>
                 <li>
-                  <Link to="/explore">Explore</Link>
+                  <Link to="/explore">More Cars</Link>
                 </li>
                 <li>
                   <Link to="/login">Login</Link>
@@ -54,17 +54,17 @@ const Footer = () => {
             <div className="p-3 text-center">
               <h4 className="text-white">Follow Us</h4>
               <div>
-                <Link to="/" className="d-block custom-icon-border">
-                  <FontAwesomeIcon icon={faLinkedinIn} className="faIcon" />
+                <Link to="/" className="d-block custom-icon-border link-din">
+                  <FontAwesomeIcon icon={faLinkedinIn} className="faIcon " />
                 </Link>
-                <Link to="/" className="d-block custom-icon-border">
-                  <FontAwesomeIcon icon={faFacebookF} className="faIcon" />
+                <Link to="/" className="d-block custom-icon-border facebook">
+                  <FontAwesomeIcon icon={faFacebookF} className="faIcon " />
                 </Link>
-                <Link to="/" className="d-block custom-icon-border">
-                  <FontAwesomeIcon icon={faTwitter} className="faIcon" />
+                <Link to="/" className="d-block custom-icon-border twitter">
+                  <FontAwesomeIcon icon={faTwitter} className="faIcon " />
                 </Link>
-                <Link to="/" className="d-block custom-icon-border">
-                  <FontAwesomeIcon icon={faInstagram} className="faIcon" />
+                <Link to="/" className="d-block custom-icon-border instagram">
+                  <FontAwesomeIcon icon={faInstagram} className="faIcon " />
                 </Link>
               </div>
             </div>
