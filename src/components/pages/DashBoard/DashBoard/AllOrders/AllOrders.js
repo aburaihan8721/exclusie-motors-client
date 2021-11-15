@@ -6,7 +6,7 @@ const AllOrders = () => {
 
   // load all orders
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings`)
+    fetch(`https://still-dawn-32083.herokuapp.com/bookings`)
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, []);
@@ -16,7 +16,7 @@ const AllOrders = () => {
   const handleDeleteOrder = (id) => {
     const proceed = window.confirm("Are You Sure, You Want To Delete");
     if (proceed) {
-      const url = `http://localhost:5000/bookings/${id}`;
+      const url = `https://still-dawn-32083.herokuapp.com/bookings/${id}`;
       fetch(url, {
         method: "DELETE",
       })

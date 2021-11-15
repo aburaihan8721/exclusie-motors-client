@@ -8,7 +8,7 @@ const AddProduct = () => {
   const onSubmit = (data) => {
     console.log(data);
 
-    axios.post("http://localhost:5000/cars", data).then((res) => {
+    axios.post("https://still-dawn-32083.herokuapp.com/cars", data).then((res) => {
       if (res.data.insertedId) {
         <div className="alert alert-success" role="alert">
           Car Added Successfully!

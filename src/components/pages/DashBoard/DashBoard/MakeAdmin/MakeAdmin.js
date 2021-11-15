@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     e.preventDefault();
     const bookings = { email };
 
-    fetch(`http://localhost:5000/bookings/admin`, {
+    fetch(`https://still-dawn-32083.herokuapp.com/bookings/admin`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -42,7 +42,7 @@ const Purchase = () => {
 
     console.log(booking);
     // post booking info to server
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://still-dawn-32083.herokuapp.com/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -60,7 +60,7 @@ const Purchase = () => {
 
   // data load
   useEffect(() => {
-    fetch(`http://localhost:5000/cars/${id}`)
+    fetch(`https://still-dawn-32083.herokuapp.com/cars/${id}`)
       .then((res) => res.json())
       .then((data) => setCar(data));
   }, [id]);
@@ -121,7 +121,6 @@ const Purchase = () => {
                     name="brand"
                     defaultValue={car.brand}
                     disabled
-
                   />
                 </div>
 
@@ -132,7 +131,6 @@ const Purchase = () => {
                     name="model"
                     defaultValue={car.model}
                     disabled
-
                   />
                 </div>
 
@@ -165,7 +163,7 @@ const Purchase = () => {
                     name="mobile"
                   />
                 </div>
-                
+
                 <div>
                   <textarea
                     className="form-control mb-4"

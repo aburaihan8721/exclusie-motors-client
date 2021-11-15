@@ -103,7 +103,7 @@ const useFirebase = () => {
 
   // load admin data
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings/${user.email}`)
+    fetch(`https://still-dawn-32083.herokuapp.com/bookings/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);

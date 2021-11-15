@@ -8,7 +8,7 @@ const MyOrders = () => {
 
   // load my booking
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings?email=${user.email}`)
+    fetch(`https://still-dawn-32083.herokuapp.com/bookings?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyBooking(data));
   }, [user.email]);
@@ -18,7 +18,7 @@ const MyOrders = () => {
     const proceed = window.confirm("Are You Sure, You Want To Delete");
 
     if (proceed) {
-      const url = `http://localhost:5000/bookings/${id}`;
+      const url = `https://still-dawn-32083.herokuapp.com/bookings/${id}`;
       fetch(url, {
         method: "DELETE",
       })

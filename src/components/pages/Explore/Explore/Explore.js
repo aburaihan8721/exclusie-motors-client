@@ -8,7 +8,7 @@ const Explore = () => {
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cars`)
+    fetch(`https://still-dawn-32083.herokuapp.com/cars`)
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   }, []);

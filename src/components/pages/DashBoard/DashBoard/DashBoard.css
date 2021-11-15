@@ -6,3 +6,8 @@
   background: rgb(34, 193, 195);
   background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(161, 140, 230, 0.9794292717086834) 100%);
 }
+
+#dashboard-area .home-icon {
+  font-size: 30px;
+  color: #bb2d3b;
+}

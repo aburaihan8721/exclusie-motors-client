@@ -14,7 +14,7 @@ const AddReview = () => {
   const onSubmit = (data) => {
     console.log(data);
     // post review data to server
-    axios.post("http://localhost:5000/reviews", data).then((res) => {
+    axios.post("https://still-dawn-32083.herokuapp.com/reviews", data).then((res) => {
       console.log(res);
       if (res.data.acknowledged) {
         setSuccess(true);

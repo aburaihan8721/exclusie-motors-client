@@ -38,26 +38,6 @@ const MenuBar = () => {
                 </NavLink>
               </li>
 
-              {/* <>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/pay">
-                      Pay
-                    </NavLink>
-                  </li>
-
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/myOrders">
-                      My Orders
-                    </NavLink>
-                  </li>
-
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/addReview">
-                      Add Review
-                    </NavLink>
-                  </li>
-                </> */}
-
               {user?.email ? (
                 <>
                   <li className="nav-item">
